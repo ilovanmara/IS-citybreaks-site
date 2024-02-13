@@ -1,0 +1,124 @@
+.booking-details {
+    /* border: 1px solid rgb(73, 50, 12);
+    padding: 5px;
+    margin-bottom: 20px;
+    width:330px;
+    box-sizing:border-box; */
+    max-width: 300px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .booking-container {
+    display: flex;
+    justify-content: space-between;  /* Adjust as needed */
+    align-items: flex-start;        /* Align items at the top */
+    gap: 20px;                      /* Adjust the spacing between flights */
+  }
+  .detail-item {
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif; /* Change 'Roboto' to your desired font-family */
+    font-size: 15px; /* Optional: Adjust font size */
+    color: rgb(73, 50, 12); 
+    margin-bottom: 10px; 
+    margin-left: 30px;
+    text-align: left; 
+    left: 50%;
+  }
+
+  .detail-price {
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif; /* Change 'Roboto' to your desired font-family */
+    font-size: 20px; /* Optional: Adjust font size */
+    color: rgb(65, 64, 63); 
+    margin-bottom: 10px; 
+    margin-left: 40px;
+    text-align: center; 
+    margin-right: 40px;
+  }
+
+  .detail-price2 {
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif; /* Change 'Roboto' to your desired font-family */
+    font-size: 35px; /* Optional: Adjust font size */
+    color: rgb(65, 64, 63);  
+    margin-bottom: 20px; 
+    margin-left: 50px;
+    text-align: center; 
+    left: 50%;
+  }
+  
+  .details {
+    font-family: 'Roboto', sans-serif; /* Change 'Roboto' to your desired font-family */
+    color: rgb(73, 50, 12); 
+    margin-bottom: 10px; 
+    margin-left: 40px;
+    text-align: left; 
+    left: 50%;
+} 
+
+.listFlights {
+    font-family: 'Roboto', sans-serif; /* Change 'Roboto' to your desired font-family */
+    font-size: 15px; /* Optional: Adjust font size */
+    color: rgb(73, 50, 12); 
+    margin-bottom: 10px; 
+    margin-left: 50px;
+    text-align: left; 
+    left: 50%;
+} 
+
+button {
+    background-color: rgb(157, 160, 212);;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: rgb(157, 160, 212);;
+  }
+
+  .center-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; 
+  }
+  .book-button {
+    margin-top: 20px; 
+    display: flex;
+    justify-content: center;
+}
+
+.book-button button {
+    background-color:rgb(157, 160, 212); /* Green background color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding for better appearance */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Add cursor on hover */
+}
+
+.book-button button:hover {
+    background-color: rgb(157, 160, 212); /* Darker green on hover */
+}
+
+.total-price-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+.total-price-container p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+  
+  .total-price-container h2 {
+    font-size: 24px;
+    margin: 0;
+    color: rgb(65, 64, 63); /* Adjust the color as needed */
+  }

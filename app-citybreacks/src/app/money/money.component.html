@@ -1,0 +1,17 @@
+<header>
+    <h1>Add Money</h1>
+  </header>
+  
+  <main>
+    <form (ngSubmit)="addMoney()">
+      <label for="amount">Amount to Add:</label>
+      <input type="number" id="amount" name="amount" placeholder="Enter the amount" required [(ngModel)]="amount">
+  
+      <button type="submit">Add Money</button>
+    </form>
+  </main>
+
+  <div class="money-container">
+    <h2>Your Money</h2>
+    <p>Your current balance: {{ userMoney | currency: 'EUR' }}</p>
+  </div>

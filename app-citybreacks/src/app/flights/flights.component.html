@@ -1,0 +1,111 @@
+<div class="content">
+    <form [formGroup]="searchForm" class="my-4">
+        <div class="row text-center">
+            <div class="col-md-3">
+                <label for="destination" class="form-label">Destination:</label>
+                <select id="destination" formControlName="destination" class="form-select">
+                    <option value="" disabled selected>Select Destination</option>
+                    <option *ngFor="let destination of uniqueDestinations" [value]="destination">
+                        {{ destination }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <label for="departureCity" class="form-label">Departure City:</label>
+                <select id="departureCity" formControlName="departureCity" class="form-select">
+                    <option value="" disabled selected>Select Departure City</option>
+                    <option *ngFor="let arrivalCities of uniqueArrivalCities" [value]="arrivalCities">
+                        {{ arrivalCities }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label for="startDate" class="form-label">Start Date:</label>
+                <input type="date" id="startDate" formControlName="startDate" class="form-control">
+            </div>
+
+            <div class="col-md-2">
+                <label for="endDate" class="form-label">End Date:</label>
+                <input type="date" id="endDate" formControlName="endDate" class="form-control">
+            </div>
+
+            <div class="col-md-2">
+                <label for="numberOfPersons" class="form-label">Persons:</label>
+                <input type="number" id="numberOfPersons" formControlName="numberOfPersons" class="form-control">
+            </div>
+        </div>
+        <div class="mt-3">
+            <button type="button" class="btn btn-primary" (click)="onSearch()" [disabled]="!searchForm.valid"
+            [ngStyle]="{'background-color': searchForm.valid ? '' : 'gray'}">Search</button>
+        </div>
+    </form>
+</div>
+<div class="content-flights">
+    <div class="listFlights">
+        <h2>List of Flights</h2>
+        <table *ngIf="searchFlights.length" class="table">
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th>Airline</th>
+                    <th>Departure City</th>
+                    <th> </th>
+                    <th>Arrival City</th>
+                    <th>Date</th>
+                    <th>Price</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let flight of searchFlights">
+                    <td><mat-icon> local_airport</mat-icon></td>
+                    <td>{{ flight.airline }}</td>
+                    <td><mat-icon>flight_takeoff</mat-icon> {{ flight.deparureCity }} {{ flight.departureTime }}</td>
+                    <td><mat-icon> arrow_forward</mat-icon></td>
+                    <td><mat-icon>flight_land</mat-icon> {{ flight.arrivalCity }} {{ flight.arrivalTime }}</td>
+                    <td>{{ flight.departureDate }}</td>
+                    <td>{{ flight.price }} Euro</td>
+                    <td><button class="btn btn-success" (click)="onBook(flight)">Book</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <p *ngIf="!searchFlights.length">
+            We do not find any flight for this destination
+        </p>
+        <div *ngIf="showReturnFlights">
+        <h2>List of Return Flights</h2>
+        <table *ngIf="searchFlightsBack.length > 0" class="table">
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th>Airline</th>
+                    <th>Departure City</th>
+                    <th> </th>
+                    <th>Arrival City</th>
+                    <th>Date</th>
+                    <th>Price</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let flight of searchFlightsBack">
+                    <td><mat-icon> local_airport</mat-icon></td>
+                    <td>{{ flight.airline }}</td>
+                    <td><mat-icon>flight_takeoff</mat-icon> {{ flight.deparureCity }} {{ flight.departureTime }}</td>
+                    <td><mat-icon> arrow_back</mat-icon></td>
+                    <td><mat-icon>flight_land</mat-icon> {{ flight.arrivalCity }} {{ flight.arrivalTime }}</td>
+                    <td>{{ flight.departureDate }}</td>
+                    <td>{{ flight.price }} Euro</td>
+                </tr>
+            </tbody>
+        </table>
+        <p *ngIf="!searchFlightsBack.length">
+            We do not find any return flight for this destination
+        </p>
+    </div>
+    </div>
+</div>
+<!-- <mat-icon> local_airport</mat-icon> -->
+<!-- <mat-icon>arrow_forward</mat-icon> -->

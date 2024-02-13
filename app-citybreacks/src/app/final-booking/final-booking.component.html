@@ -1,0 +1,66 @@
+<div class="booking-container">
+<div *ngIf="flight" class="booking-details">
+    <h2 class="details">Selected Flight Details</h2>
+    <div class="detail-item">
+      <strong>Departure City:</strong> {{ flight.deparureCity }}
+    </div>
+    <div class="detail-item">
+      <strong>Arrival City:</strong> {{ flight.arrivalCity }}
+    </div>
+    <div class="detail-item">
+        <strong>Departure Airport:</strong> {{ flight.deparureAirport }}
+    </div>
+    <div class="detail-item">
+        <strong>Arrival Airport:</strong> {{ flight.arrivalAirport }}
+    </div>
+    <div class="detail-item">
+        <strong>Departure Time:</strong> {{ flight.departureTime }}
+    </div>
+    <div class="detail-item">
+        <strong>Arrival Time:</strong> {{ flight.arrivalTime }}
+    </div>
+    <div class="detail-item">
+        <strong>Departure Date:</strong> {{ flight.departureDate}}
+    </div>
+    <div class="detail-price">
+        <strong class="detail-price2">{{ flight.price}} </strong> <mat-icon>euro_symbol</mat-icon>
+    </div>
+
+</div>
+
+<div *ngIf="returnFlight" class="booking-details">
+    <h2 class="details">Selected Flight Details</h2>
+    <div class="detail-item">
+      <strong>Departure City:</strong> {{ returnFlight?.deparureCity }}
+    </div>
+    <div class="detail-item">
+      <strong>Arrival City:</strong> {{ returnFlight?.arrivalCity }}
+    </div>
+    <div class="detail-item">
+        <strong>Departure Airport:</strong> {{ returnFlight?.deparureAirport }}
+    </div>
+    <div class="detail-item">
+        <strong>Arrival Airport:</strong> {{ returnFlight?.arrivalAirport }}
+    </div>
+    <div class="detail-item">
+        <strong>Departure Time:</strong> {{ returnFlight?.departureTime }}
+    </div>
+    <div class="detail-item">
+        <strong>Arrival Time:</strong> {{ returnFlight?.arrivalTime }}
+    </div>
+    <div class="detail-item">
+        <strong>Departure Date:</strong> {{ returnFlight?.departureDate}}
+    </div>
+    <div class="detail-price">
+        <strong class="detail-price2">{{ returnFlight?.price}} </strong> <mat-icon>euro_symbol</mat-icon>
+    </div>
+   
+</div>
+</div>
+<div class="total-price-container">
+    <p>Total Price:</p>
+    <h2>{{ calculateTotalPrice() | currency: 'EUR' }}</h2>
+    <button class="btn btn-success" (click)="finalBook()">Book These Flights</button>
+    <p style="color: rgb(94, 216, 94);">{{message}}</p>
+    <p style="color: rgb(201, 24, 24);">{{errorMsg}}</p>
+  </div>

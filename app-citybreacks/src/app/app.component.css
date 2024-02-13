@@ -1,0 +1,12 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.icons mat-icons, .icons div{
+    cursor: pointer;
+}
+
+.custom-toolbar {
+    background-color: rgb(250, 145, 7); /* Replace with your desired color value */
+    color: white; /* Text color */
+  }

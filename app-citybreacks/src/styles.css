@@ -1,0 +1,24 @@
+
+@import "assets/bootstrap.min.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+ 
+button.btn-primary {
+    background-color: rgb(157, 160, 212); 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+  }
+  
+  button.btn-primary:hover {
+    background-color: rgb(157, 160, 212); 
+  }  
+  
+
+
+ 
+  
+ 

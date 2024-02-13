@@ -1,0 +1,31 @@
+<div class="flight-list">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Flight Details</th>
+        <th>Return Flight Details</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservation of reservations">
+        <td class="flight-details" *ngIf="flights[reservation.id]">
+          <p><strong>Departure City:</strong> {{ flights[reservation.id].departureCity }}</p>
+          <p><strong>Arrival City:</strong> {{ flights[reservation.id].arrivalCity }}</p>
+          <p><strong>Date:</strong> {{ flights[reservation.id].departureDate }}</p>
+        </td>
+        <td class="flight-details" *ngIf="returnflights[reservation.id] && reservation.returnFlightId">
+          <p><strong>Departure City:</strong> {{ returnflights[reservation.id].departureCity }}</p>
+          <p><strong>Arrival City:</strong> {{ returnflights[reservation.id].arrivalCity }}</p>
+          <p><strong>Date:</strong> {{ returnflights[reservation.id].departureDate }}</p>
+        </td>
+        <td *ngIf="!returnflights[reservation.id] && !reservation.returnFlightId" class="no-return-flight">
+          <p><strong>Without return flight</strong></p>
+        </td>
+        <td>
+          <button class="btn btn-primary" (click)="onDelete(reservation.id)">Cancel Reservation</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

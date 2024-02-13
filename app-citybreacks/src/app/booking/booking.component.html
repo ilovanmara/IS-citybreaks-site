@@ -1,0 +1,68 @@
+<div *ngIf="selectedFlight" class="booking-details">
+    <h2 class="details">Selected Flight Details</h2>
+    <div class="detail-item">
+      <strong>Departure City:</strong> {{ selectedFlight.deparureCity }}
+    </div>
+    <div class="detail-item">
+      <strong>Arrival City:</strong> {{ selectedFlight.arrivalCity }}
+    </div>
+    <div class="detail-item">
+        <strong>Departure Airport:</strong> {{ selectedFlight.deparureAirport }}
+    </div>
+    <div class="detail-item">
+        <strong>Arrival Airport:</strong> {{ selectedFlight.arrivalAirport }}
+    </div>
+    <div class="detail-item">
+        <strong>Departure Time:</strong> {{ selectedFlight.departureTime }}
+    </div>
+    <div class="detail-item">
+        <strong>Arrival Time:</strong> {{ selectedFlight.arrivalTime }}
+    </div>
+    <div class="detail-item">
+        <strong>Departure Date:</strong> {{ selectedFlight.departureDate}}
+    </div>
+    <div class="detail-price">
+        <strong class="detail-price2">{{ selectedFlight.price}} </strong> <mat-icon>euro_symbol</mat-icon>
+    </div>
+    <div class="book-button">
+        <button class="btn btn-success" (click)="onBook(selectedFlight)">Book This Flight</button>
+    </div>
+</div>
+  <div class="listFlights" *ngIf="returnFlights.length">
+    <h2>Now select your Return Flight</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th> </th>
+                <th>Airline</th>
+                <th>Departure City</th>
+                <th> </th>
+                <th>Arrival City</th>
+                <th>Date</th>
+                <th>Price</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let flight of returnFlights">
+                <td><mat-icon> local_airport</mat-icon></td>
+                <td>{{ flight.airline }}</td>
+                <td><mat-icon>flight_takeoff</mat-icon> {{ flight.deparureCity }} {{ flight.departureTime }}</td>
+                <td><mat-icon> arrow_back</mat-icon></td>
+                <td><mat-icon>flight_land</mat-icon> {{ flight.arrivalCity }} {{ flight.arrivalTime }}</td>
+                <td>{{ flight.departureDate }}</td>
+                <td>{{ flight.price }}</td>
+                <td><button class="btn btn-success" (click)="onBookReturn(selectedFlight, flight)">Book</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- <p *ngIf="!searchFlightsBack.length">
+        We do not find any return flight for this destination
+    </p> -->
+</div>
+
+  <div *ngIf="!selectedFlight">
+    <p>No flight selected. Please go back and select a flight.</p>
+  </div>
+  

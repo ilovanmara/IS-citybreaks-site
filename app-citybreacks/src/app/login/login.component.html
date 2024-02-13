@@ -1,0 +1,22 @@
+<div class="login-container">
+    <h2>Login</h2>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username" required>
+  
+      <label for="password">Password:</label>
+      <div class="password-container">
+        <input
+          type="{{ hidePassword ? 'password' : 'text' }}"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          required
+        >
+      </div>
+  
+      <div class="center-button">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+  </div>
